@@ -958,6 +958,7 @@
     <Content Include="Scripts\lodash.underscore.min.js">
       <DependentUpon>components.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\math.uuid.js" />
     <Content Include="Scripts\npm.js">
       <DependentUpon>components.js</DependentUpon>
     </Content>
@@ -976,6 +977,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomesController.cs" />
+    <Compile Include="Controllers\ManifestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1024,6 +1026,7 @@
       <DependentUpon>components.js</DependentUpon>
     </Content>
     <Content Include="Views\Homes\Edit.cshtml" />
+    <Content Include="Views\Manifest\Index.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Home\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

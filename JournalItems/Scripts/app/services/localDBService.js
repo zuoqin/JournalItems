@@ -70,11 +70,12 @@
                         var request = store.count();
                         request.onsuccess = function (e) {
                             count = e.target.result;
+                            deferred.resolve(count);
                         };
                     } else {
                         count = 0;
                     }
-                    deferred.resolve(count);
+                    
                     return deferred.promise;
                 },
                 getAll:function(objectStoreName) {
@@ -82,7 +83,7 @@
                     _db.requireObjectStoreName(objectStoreName, deferred);
                     _db.requireOpenDB(objectStoreName, deferred);
                     var store = _db.getObjectStore(objectStoreName);
-                    var cursor = store.openCursor(objectStoreName);
+                    var cursor = store.openCursor();
                     var data = [];
                     cursor.onsuccess = function(e) {
                         var result = e.target.result;

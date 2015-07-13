@@ -88,7 +88,11 @@
                     var deferred = $q.defer();
                     svc.getById(id).then(function (_Event) {
                         var home = _Event.srcElement.result;
-                        deferred.resolve(home.id === id);
+                        if (home != undefined) {
+                            deferred.resolve(home.id === id);
+                        } else {
+                            deferred.resolve(false);
+                        }
                     },deferred.reject);
                     return deferred.promise;
                 },

@@ -50,7 +50,7 @@
                 </table>
                 <div class="lead">{{home.notes}}</div>
                 <button class="btn btn-link" data-ng-click="delete($index)">Delete</button>
-                <a data-ng-href="/homes/edit#{{home.id}}/{{home.streetAddress.split(' ').join('-')}}" class="btn btn-default">Edit</a>
+                <a data-ng-href="/homes/edit/{{home.id}}/{{home.streetAddress.split(' ').join('-')}}" class="btn btn-default">Edit</a>
             </div>
         </div>
     </div>

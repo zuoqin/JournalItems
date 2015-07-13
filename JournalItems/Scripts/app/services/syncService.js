@@ -8,10 +8,16 @@
             var svc = {
                 check: function() {
                     var deferred = $q.defer();
-                    localDBService.getCount(dbModel.objectStoreName).then(
-                        function(count) {
-                            deferred.resolve(count > 0);
-                        }, deferred.reject);
+                    localDBService.open(dbModel).then(function() {
+                        localDBService.getCount(dbModel.objectStoreName).then(
+                            function (count) {
+                                if (count != undefined) {
+                                    deferred.resolve(count > 0);
+                                } else {
+                                    deferred.resolve(false);
+                                }
+                            }, deferred.reject);
+                    }, deferred.rejec);
                     return deferred.promise;
                 },
                 monitorUp: function() {
@@ -33,7 +39,7 @@
                 sync: function() {
                     var deferred = $q.defer();
                     localDBService.open(dbModel).then(function() {
-                        localDBService.getAll(dbModel.requireObjectStoreName).then(function(homes) {
+                        localDBService.getAll(dbModel.objectStoreName).then(function(homes) {
                             remotePersistenceStrategy.save(homes).then(function(result) {
                                 if (result) {
                                     localDBService.clear(dbModel.objectStoreName).then(function(res) {
