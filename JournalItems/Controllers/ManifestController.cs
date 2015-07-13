@@ -13,8 +13,8 @@ namespace JournalItems.Controllers
         public ActionResult Index()
         {
             Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
-            Response.ContentType = "text/cache-manifest";
-
+            //Response.ContentType = "text/cache-manifest";
+            Response.ContentType = "text/application-manifest";
 
             string path = HttpContext.Server.MapPath("~/Views/Manifest/index.cshtml");
             string text = System.IO.File.ReadAllText(path);

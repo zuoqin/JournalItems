@@ -959,6 +959,7 @@
       <DependentUpon>components.js</DependentUpon>
     </Content>
     <Content Include="Scripts\math.uuid.js" />
+    <Content Include="Scripts\modernizr.js" />
     <Content Include="Scripts\npm.js">
       <DependentUpon>components.js</DependentUpon>
     </Content>
