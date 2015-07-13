@@ -1041,11 +1041,15 @@
     <Content Include="Views\Homes\Edit.cshtml" />
     <Content Include="Views\Manifest\Index.cshtml" />
     <Content Include="site.manifest" />
-    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Views\Home\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Views\Homes\Index.cshtml" />
+    <Content Include="Views\Homes\Index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
